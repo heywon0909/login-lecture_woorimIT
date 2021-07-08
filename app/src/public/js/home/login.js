@@ -9,6 +9,15 @@
         passowrd: password.value,
     };
     console.log(req);
+    console.log(JSON.stringify(req))
 }
 loginBtn.addEventListener("click",login);
 
+
+fetch("/login",{
+    method: "POST",
+    hearders: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(req),
+})
